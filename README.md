@@ -11,6 +11,22 @@ MusicScholar is an AI-powered music education platform that lets you upload musi
 
 ---
 
+## Screenshots
+
+### Admin — Chat
+![Admin dashboard](assets/admin-dashboard.png)
+
+### Admin — Upload
+![Admin upload page](assets/admin-upload.png)
+
+### Admin — Library
+![Admin library page](assets/admin-library.png)
+
+### User — Chat
+![User dashboard](assets/user-dashboard.png)
+
+---
+
 ## What it does
 
 - **Chat with your knowledge base** — Upload PDFs (textbooks, lecture notes, scores) and ask questions. The AI retrieves the most relevant passages and gives you a cited, grounded answer instead of guessing.
