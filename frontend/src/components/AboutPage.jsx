@@ -119,18 +119,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-{/* Links */}
-      <div className="flex flex-wrap gap-4">
-        <a
-          href="https://music-scholar.vercel.app"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ background: 'linear-gradient(135deg, #124170, #215B63)' }}
-        >
-          Live Demo →
-        </a>
-      </div>
 
     </div>
   )
