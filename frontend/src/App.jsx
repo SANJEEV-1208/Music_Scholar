@@ -6,6 +6,7 @@ import FileUpload from './components/FileUpload.jsx'
 import SheetMusicViewer from './components/SheetMusicViewer.jsx'
 import TopicBrowser from './components/TopicBrowser.jsx'
 import AudioAnalysis from './components/AudioAnalysis.jsx'
+import AboutPage from './components/AboutPage.jsx'
 
 const ALL_TABS = [
   { id: 'chat',       label: 'Chat',        icon: '💬', adminOnly: false },
@@ -15,7 +16,7 @@ const ALL_TABS = [
   { id: 'audio',      label: 'Audio',       icon: '🎤', adminOnly: true  },
 ]
 
-function ProfileMenu({ user, onLogout }) {
+function ProfileMenu({ user, onLogout, onAbout }) {
   const [open, setOpen] = useState(false)
   const menuRef = useRef(null)
 
@@ -62,6 +63,16 @@ function ProfileMenu({ user, onLogout }) {
             </span>
           </div>
           <button
+            onClick={() => { setOpen(false); onAbout() }}
+            className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            About
+          </button>
+          <div className="border-t border-gray-100 my-1" />
+          <button
             onClick={handleLogout}
             className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors"
           >
@@ -97,7 +108,7 @@ function AppShell() {
 
   const isAdmin = user.role === 'admin'
   const tabs = ALL_TABS.filter(t => !t.adminOnly || isAdmin)
-  const visibleTabIds = tabs.map(t => t.id)
+  const visibleTabIds = [...tabs.map(t => t.id), 'about']
   const safeTab = visibleTabIds.includes(activeTab) ? activeTab : 'chat'
 
   function handleMusicUploaded(analysis, xmlContent) {
@@ -153,7 +164,7 @@ function AppShell() {
           </div>
 
           {/* Profile */}
-          <ProfileMenu user={user} onLogout={logout} />
+          <ProfileMenu user={user} onLogout={logout} onAbout={() => setActiveTab('about')} />
         </div>
       </nav>
 
@@ -181,6 +192,7 @@ function AppShell() {
             {safeTab === 'audio' && (
               <AudioAnalysis analysis={audioAnalysis} title={audioTitle} />
             )}
+            {safeTab === 'about' && <AboutPage />}
           </div>
         </main>
       )}
