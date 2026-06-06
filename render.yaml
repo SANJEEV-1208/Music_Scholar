@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: musicscholar-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: HF_API_TOKEN
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MUSIC21_SERVICE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+    healthCheckPath: /health
+
+  - type: web
+    name: musicscholar-music21
+    env: python
+    rootDir: microservice
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: "10000"
+    healthCheckPath: /health

@@ -1,0 +1,42 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── Environment variables (never commit secrets) ──────────────────────────────
+.env
+.env.local
+.env.production
+
+# ── Build output ──────────────────────────────────────────────────────────────
+dist/
+build/
+.vite/
+
+# ── Python virtual environments ───────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# ── OS & editor clutter ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Uploaded / generated files (not source code) ─────────────────────────────
+knowledge-base/
+uploads/
+temp/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
