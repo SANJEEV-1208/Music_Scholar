@@ -2,6 +2,13 @@
 
 MusicScholar is an AI-powered music education platform that lets you upload music documents and sheet music, then ask natural language questions about music theory, harmony, rhythm, and composition. Answers are grounded in the uploaded content and cited back to the source.
 
+**Live Demo:** https://music-scholar.vercel.app
+
+| Service | URL |
+|---|---|
+| Frontend | https://music-scholar.vercel.app |
+| Backend API | https://musicscholar-backend.onrender.com |
+
 ---
 
 ## What it does
