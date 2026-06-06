@@ -21,17 +21,6 @@ const STEPS = [
   },
 ]
 
-const STACK = [
-  { label: 'Frontend',    value: 'React 18 + Vite + Tailwind CSS v4' },
-  { label: 'Backend',     value: 'Node.js + Express (ESM)' },
-  { label: 'Database',    value: 'Neon PostgreSQL + pgvector' },
-  { label: 'Embeddings',  value: 'Hugging Face — all-MiniLM-L6-v2' },
-  { label: 'LLM',         value: 'Groq — LLaMA 3.3 70B Versatile' },
-  { label: 'File storage', value: 'Cloudinary' },
-  { label: 'Sheet music', value: 'Python + Flask + music21' },
-  { label: 'Auth',        value: 'JWT + bcrypt' },
-  { label: 'Deployment',  value: 'Vercel (frontend) + Render (backend)' },
-]
 
 const FEATURES = [
   {
@@ -130,23 +119,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Tech stack */}
-      <div>
-        <h2 className="text-xl font-bold mb-8" style={{ color: '#124170' }}>Tech stack</h2>
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          {STACK.map((item, i) => (
-            <div
-              key={item.label}
-              className={`flex items-center justify-between px-6 py-4 text-sm ${i !== STACK.length - 1 ? 'border-b border-gray-100' : ''}`}
-            >
-              <span className="font-medium text-gray-500 w-36 flex-shrink-0">{item.label}</span>
-              <span className="text-gray-800 font-medium text-right">{item.value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Links */}
+{/* Links */}
       <div className="flex flex-wrap gap-4">
         <a
           href="https://music-scholar.vercel.app"
