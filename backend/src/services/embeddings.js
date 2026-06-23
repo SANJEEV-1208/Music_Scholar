@@ -72,7 +72,7 @@ async function embedHF(texts) {
 }
 
 // ── Public API ───────────────────────────────────────────────────────────────
-const useHF = process.env.NODE_ENV === 'production' && !!process.env.HF_API_TOKEN
+const useHF = false
 
 export async function embedTexts(texts) {
   if (texts.length === 0) return []
