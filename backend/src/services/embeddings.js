@@ -26,7 +26,7 @@ async function embedLocal(texts) {
 
 // ── HF Inference API (production) ───────────────────────────────────────────
 const HF_ENDPOINT =
-  'https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2'
+  'https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2'
 const BATCH_SIZE = 32
 const BATCH_DELAY_MS = 200
 
@@ -36,6 +36,7 @@ function sleep(ms) {
 
 async function callHF(inputs, retrying = false) {
   try {
+    console.log('Using HF endpoint:', HF_ENDPOINT)
     const { data } = await axios.post(
       HF_ENDPOINT,
       { inputs, options: { wait_for_model: true } },
